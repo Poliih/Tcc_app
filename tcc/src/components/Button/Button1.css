@@ -1,0 +1,17 @@
+
+.custom-button1 {
+  top: 10px;
+  background: linear-gradient(133deg, #9400D3 0%, #4B0082 100%);
+  color: #fff; /* Cor do texto branco */
+  border: none; /* Remove a borda */
+  border-radius: 5px; /* Borda arredondada */
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de apontar */
+}
+
+.custom-button1:hover {
+  background-color: #0056b3; /* Altera a cor de fundo ao passar o mouse */
+}
+
+
