@@ -1,162 +1,215 @@
+/* Estilos para o menu */
 .menu {
-    width: 200px;
-    height: 100%;
-    background: linear-gradient(180deg, #1E646E 45%, #002C2F 100%);
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    transition: width 0.5s ease; /* Ajuste aqui */
-    border-right: 1px;
-  }
-  
-  .menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 120px 0 0 0;
-    text-align: left;
-    opacity: calc(1 - ((200px - var(--menu-width)) / 150));
-    transition: opacity 0.7s ease;
-  }
-  
-  .menu ul li {
-    padding: 15px 0;
-    margin-left: 45px;
-    text-align: left;
-    margin-top: 10px;
-    opacity: 0;
-    animation: tracking-in-expand-fwd 0.5s forwards;
-  }
-  
-  @keyframes tracking-in-expand-fwd {
-    0% {
-      letter-spacing: -0.5em;
-      transform: translateZ(-700px);
-      opacity: 0;
-    }
-    40% {
-      opacity: 0.6;
-    }
-    100% {
-      transform: translateZ(0);
-      opacity: 1;
-    }
-  }
-  
-  .menu ul li a {
-    text-decoration: none;
-    color: #002C2F;
-    display: block;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-  }
-  
-  .menu.fechado ul {
-    opacity: 0;
-    transition-delay: 0.5s;
-  }
-  
-  .menu.aberto ul {
+  width: 200px; /* Define a largura do menu */
+  height: 100%; /* Define a altura do menu */
+  background: linear-gradient(180deg, #1E646E 45%, #002C2F 100%); /* Define o plano de fundo do menu com um degradê linear */
+  position: fixed; /* Define a posição fixa do menu */
+  top: 0; /* Define a posição superior do menu */
+  left: 0; /* Define a posição esquerda do menu */
+  padding-top: 20px; /* Define o preenchimento superior do menu */
+  display: flex; /* Usa um modelo de layout flexível */
+  flex-direction: column; /* Define a direção dos elementos filhos como coluna */
+  justify-content: flex-start; /* Alinha os itens no início do eixo principal */
+  transition: width 0.5s ease; /* Adiciona uma transição suave na mudança de largura do menu */
+  border-right: 1px solid black; /* Define uma borda direita sólida */
+}
+
+/* Estilos para a lista dentro do menu */
+.menu ul {
+  list-style: none; /* Remove os marcadores de lista */
+  padding: 0; /* Remove o preenchimento padrão da lista */
+  margin: 120px 0 0 0; /* Define as margens da lista */
+  text-align: left; /* Alinha o texto à esquerda */
+  opacity: calc(1 - ((200px - var(--menu-width)) / 150)); /* Calcula a opacidade com base na largura do menu */
+  transition: opacity 0.7s ease; /* Adiciona uma transição suave na mudança de opacidade */
+}
+
+/* Estilos para os itens da lista dentro do menu */
+.menu ul li {
+  padding: 15px 0; /* Define o preenchimento dos itens da lista */
+  margin-left: 45px; /* Define a margem esquerda dos itens da lista */
+  text-align: left; /* Alinha o texto à esquerda */
+  margin-top: 10px; /* Define a margem superior dos itens da lista */
+  opacity: 0; /* Define a opacidade inicial dos itens da lista */
+  animation: tracking-in-expand-fwd 0.5s forwards; /* Aplica uma animação nos itens da lista */
+}
+
+/* Animação para expandir os itens da lista */
+@keyframes tracking-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-700px);
     opacity: 0;
   }
-  
-  .menu.aberto ul {
-    transition-delay: s;
+  40% {
+    opacity: 0.6;
   }
-  
-  .menu.fechado {
-    width: 50px; /* Largura quando fechado */
-    transition: width 0.5s ease; /* Ajuste aqui */
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
   }
-  
-  .botao-recolher {
-    margin: 20px auto;
-    margin-top: 15px;
-    margin-left: 80%;
-    color: #002C2F
+}
+
+/* Estilos para os links dentro dos itens da lista do menu */
+.menu ul li a {
+  text-decoration: none; /* Remove a decoração dos links */
+  color: #002C2F; /* Define a cor do texto dos links */
+  display: block; /* Define os links como elementos de bloco */
+  font-family: Arial, Helvetica, sans-serif; /* Define a família de fontes */
+  font-weight: bold; /* Define o peso da fonte como negrito */
+}
+
+/* Estilos quando o menu está fechado */
+.menu.fechado ul {
+  opacity: 0; /* Define a opacidade da lista como zero */
+  transition-delay: 0.5s; /* Adiciona um atraso na transição */
+}
+
+/* Estilos para ocultar o texto quando o menu está fechado */
+.menu.fechado .texto {
+  display: none; /* Oculta o texto */
+}
+
+/* Estilos para exibir os ícones quando o menu está fechado */
+.menu.fechado .icones {
+  display: flex; /* Exibe os ícones em um layout flexível */
+  flex-direction: column; /* Define a direção dos ícones como coluna */
+}
+
+/* Estilos para o botão de recolher */
+.botao-recolher {
+  margin: 10px; /* Define as margens do botão */
+  margin-top: 10px; /* Define a margem superior do botão */
+  margin-left: 80%; /* Posiciona o botão de recolher à esquerda */
+  color: #002C2F; /* Define a cor do ícone */
+  transition: transform 0.9s ease; /* Adiciona uma transição suave para a animação da rotação */
+}
+
+/* Estilos para o botão de recolher quando rotacionado */
+.botao-recolher.rotate {
+  transform: rotate(-180deg); /* Rotaciona a seta no sentido anti-horário quando fechado */
+}
+
+/* Estilos para o botão de expandir */
+.botao-expandir {
+  margin: 10px; /* Define as margens do botão */
+  margin-top: 10px; /* Define a margem superior do botão */
+  margin-right: 5px; /* Posiciona o botão de recolher à esquerda */
+  color: #002C2F; /* Define a cor do ícone */
+  transition: transform 0.9s ease; /* Adiciona uma transição suave */
+}
+
+/* Estilos para elementos ocultos */
+.oculto {
+  display: none; /* Oculta os elementos */
+}
+
+/* Estilos quando o menu está aberto */
+.menu.aberto {
+  width: 200px; /* Define a largura do menu como 200px */
+}
+
+/* Estilos quando o menu está fechado */
+.menu.fechado {
+  width: 50px; /* Define a largura do menu como 50px */
+}
+
+/* Animação para deslizar o menu para dentro */
+@keyframes slide-left-in {
+  from {
+    transform: translateX(-200px); /* Desloca o menu para fora da tela à esquerda */
   }
-  
-  .botao-expandir {
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #002C2F
+  to {
+    transform: translateX(0); /* Desloca o menu de volta para a posição original */
   }
-  
-  .oculto {
-    display: none;
+}
+
+/* Animação para deslizar o menu para fora */
+@keyframes slide-left-out {
+  from {
+    transform: translateX(0); /* Desloca o menu para a posição original */
   }
-  
-  .menu.aberto {
-    width: 200px;
+  to {
+    transform: translateX(-200px); /* Desloca o menu para fora da tela à esquerda */
   }
-  
-  .menu.fechado {
-    width: 50px;
-  }
-  
-  @keyframes slide-left-in {
-    from {
-      transform: translateX(-200px);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes slide-left-out {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-200px);
-    }
-  }
-  
-  .menu.slide-in {
-    animation: slide-left-in 0.5s ease forwards;
-  }
-  
-  .menu.slide-out {
-    animation: slide-left-out 0.5s ease forwards;
-  }
-  
-  .menu li .icone-chart {
-    margin-right: 12px;
-    margin-left: -2px;
-    transition: color 0.3s ease;
-  }
-  
-  .menu li .icone-database {
-    margin-right: 13px;
-    margin-left: 1px;
-    transition: color 0.3s ease;
-  }
-  
-  .menu li .icone-brain {
-    margin-right: 11px;
-    transition: color 0.3s ease;
-  }
-  
-  .menu li .icone-cog {
-    margin-right: 10px;
-    transition: color 0.3s ease;
-  }
-  
-  .menu li:hover .icone {
-    color: #ffffff;
-  }
-  
-  .content {
-    margin-left: 200px; /* Margem padrão quando o menu está aberto */
-    transition: margin-left 0.5s ease; /* Adiciona uma transição suave para a margem */
-    padding: 20px; /* Adiciona preenchimento para afastar o conteúdo das bordas */
-  }
-  
-  /* Estilos CSS quando o menu está fechado */
-  .menu.fechado + .content {
-    margin-left: 50px; /* Margem menor quando o menu está fechado */
-  }
+}
+
+/* Animação para deslizar o menu para dentro */
+.menu.slide-in {
+  animation: slide-left-in 0.5s ease forwards; /* Aplica a animação de deslizar para dentro */
+}
+
+/* Animação para deslizar o menu para fora */
+.menu.slide-out {
+  animation: slide-left-out 0.5s ease forwards; /* Aplica a animação de deslizar para fora */
+}
+
+/* Estilos para o ícone de gráfico */
+.menu li .icone-chart {
+  margin-right: 12px; /* Define a margem direita do ícone */
+  margin-left: -2px; /* Define a margem esquerda do ícone */
+  color: #002C2F; /* Define a cor padrão dos ícones */
+  transition: color 0.3s ease; /* Adiciona uma transição suave para a cor */
+}
+
+/* Estilos para o ícone de banco de dados */
+.menu li .icone-database {
+  margin-right: 13px; /* Define a margem direita do ícone */
+  margin-left: 1px; /* Define a margem esquerda do ícone */
+  color: #002C2F; /* Define a cor padrão dos ícones */
+  transition: color 0.3s ease; /* Adiciona uma transição suave para a cor */
+}
+
+/* Estilos para o ícone de cérebro */
+.menu li .icone-brain {
+  margin-right: 11px; /* Define a margem direita do ícone */
+  color: #002C2F; /* Define a cor padrão dos ícones */
+  transition: color 0.3s ease; /* Adiciona uma transição suave para a cor */
+}
+
+/* Estilos para o ícone de engrenagem */
+.menu li .icone-cog {
+  margin-right: 10px; /* Define a margem direita do ícone */
+  color: #002C2F; /* Define a cor padrão dos ícones */
+  transition: color 0.3s ease; /* Adiciona uma transição suave para a cor */
+}
+
+
+/* Estilos quando o mouse passa sobre os itens da lista do menu */
+.menu li:hover .icone {
+  color: #ffffff; /* Define a cor do ícone quando o mouse passa por cima */
+}
+
+/* Estilos para o conteúdo */
+.content {
+  margin-left: 200px; /* Define a margem esquerda do conteúdo quando o menu está aberto */
+  transition: margin-left 0.5s ease; /* Adiciona uma transição suave para a margem */
+  padding: 20px; /* Adiciona preenchimento ao conteúdo para afastá-lo das bordas */
+}
+
+/* Estilos para o conteúdo quando o menu está fechado */
+.menu.fechado + .content {
+  margin-left: 50px; /* Define a margem esquerda do conteúdo quando o menu está fechado */
+}
+
+/* Estilos para os ícones */
+.menu li .icone {
+  display: inline-block; /* Garante que os ícones fiquem visíveis */
+  color: #002C2F; /* Define a cor padrão dos ícones */
+}
+
+/* Estilos para os textos */
+.menu li .texto {
+  display: block; /* Garante que os textos fiquem visíveis */
+}
+/* Estilos para o contêiner dos ícones */
+.menu .icone-container {
+  display: flex; /* Usa um modelo de layout flexível */
+  align-items: center; /* Centraliza os ícones verticalmente */
+  margin-right: 10px; /* Adiciona uma margem à direita para separar os ícones das palavras */
+}
+
+/* Estilos para os textos */
+.menu .texto-container {
+  display: inline-block; /* Garante que os textos fiquem na mesma linha */
+}
