@@ -1,5 +1,3 @@
-// components/GeradorDados/GBD.jsx
-import React from 'react';
 
 export const generateRandomData = () => {
   return Array.from({ length: 5 }, () => Math.floor(Math.random() * 1000));

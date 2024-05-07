@@ -4,15 +4,15 @@ import './components/Button/Button1.css';
 import './components/Rectangle2/Rectangle2.css';
 import './components/menu/MenuComponent.css';
 import MenuComponent from './components/menu/menu';
-import Button1 from './components/Button/Button1';
+
 import Rectangle2 from './components/Rectangle2/Rectangle2';
-import { Row, Column} from './styles';
+import { Row } from './styles';
 import Graphic from './components/Graphic';
 import './components/Graphic/index.css';
 import OrderList from "./components/OrderList";
 import "./components/OrderList/index.css"; // Importa os estilos do componente
-
-
+// Remova esta importação redundante
+// import '../GeradorDados/GBD';
 
 function App() {
   const [menuAberto, setMenuAberto] = useState(true);
@@ -31,7 +31,7 @@ function App() {
           <Rectangle2 className="rectangle-spacing" />
         </Row>
         <Graphic />
-
+        {/* Certifique-se de que não há uso de useContext dentro do componente OrderList */}
         <OrderList />
       </div>
     </div>

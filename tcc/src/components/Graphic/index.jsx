@@ -44,7 +44,7 @@ const Graphic = () => {
         chartInstance.destroy();
       }
     };
-  }, []);
+  }, );
 
   return (
     <div className="chart-container">
