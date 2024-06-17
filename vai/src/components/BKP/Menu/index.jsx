@@ -1,10 +1,14 @@
-// components/Menu/index.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faCog, faChartPie, faDatabase, faBrain } from '@fortawesome/free-solid-svg-icons';
-import './styles.css';
 
-const MenuComponent = ({ menuAberto, toggleMenu }) => {
+const MenuComponent = () => {
+  const [menuAberto, setMenuAberto] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuAberto(!menuAberto);
+  };
+
   return (
     <nav className={`menu ${menuAberto ? 'aberto' : ''}`}>
       <div className="icones-menu">

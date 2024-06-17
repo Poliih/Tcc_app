@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Centraliza os retângulos horizontalmente */
+}
+
+.menu-aberto .Rectangle {
+  width: 300px; /* Largura ajustada dos retângulos quando o menu está aberto */
+  margin: 0 15px; /* Margem igual à esquerda e à direita */
+  
+}
+
+/* Defina estilos básicos para a linha */
+.row-content {
+  display: flex;
+  justify-content: space-around; /* Distribui os retângulos igualmente */
+  align-items: center; /* Alinha os retângulos verticalmente */
+  width: 100%; /* Ocupa toda a largura disponível */
+  margin: 50px 40px; /* Margem igual à esquerda e à direita */
+}
+
+.Rectangle {
+  width: 330px; /* Largura inicial dos retângulos */
+  height: 150px; /* Altura padrão dos retângulos */
+  background: #1E646E;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  transition: width 0.3s ease; /* Transição suave apenas para largura */
+}
+
+.menu-aberto .row-content {
+  margin-left: 40px; /* Ajuste de margem esquerda quando o menu está aberto */
+  margin-right: 40px; /* Ajuste de margem direita quando o menu está aberto */
+}
+
+.menu-aberto .Rectangle:last-child {
+  margin-right: 0; /* Remove a margem direita do último retângulo quando o menu está aberto */
+}
