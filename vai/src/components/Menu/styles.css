@@ -1,0 +1,137 @@
+/* Estilos para o menu principal */
+.menu {
+  width: 50px;
+  height: 100%;
+  background: linear-gradient(180deg, #1E646E 45%, #002C2F 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: width 0.5s ease, opacity 0.5s ease;
+  border-right: 1px solid black;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.menu.aberto {
+  width: 200px;
+  opacity: 1;
+}
+
+/* Estilos para o menu secundário */
+.menu .menu-expandir {
+  position: absolute;
+  top: 100%; /* Posicionado abaixo do menu principal */
+  left: 0;
+  width: 100%;
+  height: 50px; /* Altura desejada do menu secundário */
+  background: linear-gradient(180deg, #1E646E 45%, #002C2F 100%);
+  border-top: 1px solid black;
+  transition: height 0.5s ease; /* Adicionada transição para altura */
+  z-index: 999; /* Z-index menor para ficar abaixo do menu principal */
+  opacity: 0; /* Inicialmente invisível */
+}
+
+.menu.aberto .menu-expandir {
+  height: 100px; /* Altura do menu secundário quando expandido */
+  opacity: 1; /* Torna visível quando o menu principal está aberto */
+}
+
+/* Estilos para a seta no topo */
+.menu .botao-recolher {
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.menu .botao-recolher .icone-seta {
+  color: #ffffff;
+  font-size: 24px;
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.menu .botao-recolher .icone-seta.girando {
+  transform: rotate(0deg);
+}
+
+/* Estilos para a lista de ícones dentro do menu */
+.menu .icones {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 25px;
+}
+
+/* Estilos para os itens da lista de ícones */
+.menu .icones li {
+  position: absolute; /* Permite posicionamento manual */
+  text-align: center;
+}
+
+.menu .icones li a {
+  text-decoration: none;
+  color: #ffffff;
+  display: block;
+  padding: 20px 0;
+  position: relative;
+}
+
+/* Estilos para os ícones */
+.menu .icones li .icone {
+  position: relative;
+}
+
+/* Estilos para o nome do menu */
+.menu .icones li .nome-menu {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 10px);
+  transform: translateY(-50%);
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: none;
+}
+
+.menu.aberto .icones li .nome-menu {
+  display: block;
+}
+
+/* Estilos para a engrenagem de configuração */
+.menu .configuracao {
+  position: absolute;
+  bottom: 50px;
+  left: 13px;
+  text-align: center;
+}
+
+.menu .configuracao a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.menu .configuracao .icone-cog {
+  font-size: 25px;
+}
+
+/* Estilos para posicionar ícones manualmente */
+.menu .icones li.icone-chart {
+  top: 30px;
+  left: 12px;
+}
+
+.menu .icones li.icone-database {
+  top: 100px;
+  left: 14px;
+}
+
+.menu .icones li.icone-brain {
+  top: 170px;
+  left: 13px;
+}
