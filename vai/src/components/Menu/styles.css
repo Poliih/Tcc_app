@@ -117,8 +117,29 @@
   font-size: 20px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #ffffff; /* Cor do texto */
-  display: none;
+  opacity: 0; /* Começa invisível */
+  animation: text-focus-in 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) forwards; /* Aplica a animação */
+  display: none; /* Inicialmente oculto */
 }
+
+.menu.aberto .icones li .nome-menu {
+  display: block; /* Mostra quando o menu está aberto */
+}
+
+/* Animação text-focus-in */
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
 
 .menu.aberto .icones li.icone-chart .nome-menu {
   display: block;
