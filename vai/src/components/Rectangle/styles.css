@@ -1,26 +1,21 @@
+/* Estilos padrão para quando o menu está fechado */
 .container {
   display: flex;
 }
 
 .content {
+  margin-top: 50px;
   flex: 1;
   display: flex;
   justify-content: center; /* Centraliza os retângulos horizontalmente */
+  padding: 0 60px; /* Adiciona espaço interno nas laterais */
 }
 
-.menu-aberto .Rectangle {
-  width: 300px; /* Largura ajustada dos retângulos quando o menu está aberto */
-  margin: 0 15px; /* Margem igual à esquerda e à direita */
-  
-}
-
-/* Defina estilos básicos para a linha */
 .row-content {
   display: flex;
-  justify-content: space-around; /* Distribui os retângulos igualmente */
+  justify-content: space-between; /* Distribui os retângulos igualmente com espaço entre eles */
   align-items: center; /* Alinha os retângulos verticalmente */
   width: 100%; /* Ocupa toda a largura disponível */
-  margin: 50px 40px; /* Margem igual à esquerda e à direita */
 }
 
 .Rectangle {
@@ -29,16 +24,19 @@
   background: #1E646E;
   border-radius: 20px;
   display: flex;
+  margin-right: 40px;
+  margin-left: -30px;
   justify-content: center; /* Centraliza o conteúdo horizontalmente */
   align-items: center; /* Centraliza o conteúdo verticalmente */
   transition: width 0.3s ease; /* Transição suave apenas para largura */
 }
 
-.menu-aberto .row-content {
-  margin-left: 40px; /* Ajuste de margem esquerda quando o menu está aberto */
-  margin-right: 40px; /* Ajuste de margem direita quando o menu está aberto */
+/* Estilos adicionais para quando o menu está aberto */
+.menu-aberto .Rectangle {
+  width: 300px; /* Largura ajustada dos retângulos quando o menu está aberto */
 }
 
-.menu-aberto .Rectangle:last-child {
-  margin-right: 0; /* Remove a margem direita do último retângulo quando o menu está aberto */
+.menu-aberto .row-content {
+  margin-left: 30px; /* Ajuste de margem esquerda quando o menu está aberto */
+  margin-right: 40px;
 }

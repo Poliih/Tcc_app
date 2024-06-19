@@ -26,4 +26,5 @@ export const Column = styled.div`
     flex-direction: Column;
     justify-content: space-between;
     align-items: center;
+    
 `;

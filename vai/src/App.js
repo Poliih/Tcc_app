@@ -4,6 +4,10 @@ import './components/Menu/styles.css';
 import Rectangle from './components/Rectangle';
 import './components/Rectangle/styles.css';
 import { Row } from './styles';
+import LineChart from './components/grafico';
+import './components/grafico/styles.css';
+import './App.css';
+import ApexChartComponent from './components/graphic';
 
 function App() {
   const [menuAberto, setMenuAberto] = useState(false);
@@ -22,6 +26,9 @@ function App() {
           <Rectangle />
           <Rectangle />   
         </Row>
+          <div>
+           <ApexChartComponent />
+          </div>
       </div>
     </div>
   );

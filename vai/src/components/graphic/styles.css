@@ -1,0 +1,24 @@
+/* Importa a fonte Roboto do Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/* Estiliza o elemento body */
+body {
+  font-family: Roboto, sans-serif; /* Define a fonte padrão para Roboto, com fallback para sans-serif */
+  display: flex; /* Usa flexbox para organizar o layout */
+  justify-content: center; /* Centraliza o conteúdo horizontalmente */
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+  height: 100vh; /* Define a altura do body como 100% da altura da viewport */
+  margin: 0; /* Remove as margens padrão */
+  background-color: #f0f0f0; /* Define uma cor de fundo opcional */
+}
+
+/* Estiliza o contêiner do gráfico */
+.chart-container {
+  max-width: 650px; /* Define a largura máxima do contêiner */
+  width: 100%; /* Define a largura como 100% do elemento pai */
+  margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+  background-color: #ffffff; /* Adiciona uma cor de fundo para visibilidade */
+  padding: 20px; /* Adiciona um pouco de padding */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra para destacar */
+  border-radius: 10px; /* Adiciona bordas arredondadas */
+}
