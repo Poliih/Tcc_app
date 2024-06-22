@@ -118,13 +118,12 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #ffffff; /* Cor do texto */
   opacity: 0; /* Começa invisível */
+  display: block; /* Mostra quando o menu está aberto */
   animation: text-focus-in 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) forwards; /* Aplica a animação */
   display: none; /* Inicialmente oculto */
 }
 
-.menu.aberto .icones li .nome-menu {
-  display: block; /* Mostra quando o menu está aberto */
-}
+
 
 /* Animação text-focus-in */
 @keyframes text-focus-in {
@@ -169,18 +168,38 @@
   text-align: center;
 }
 
+
 .menu .configuracao a {
   text-decoration: none;
   color: #ffffff;
+  display: block;
 }
 
 .menu .configuracao .icone-cog {
   font-size: 25px;
+  
 }
 
 .menu .configuracao .icone-cog:hover {
-  color: #2b8a99; /* Define a cor da engrenagem quando o mouse passa por cima */
+  color: #2b8a99;
 }
+
+.menu .configuracao .nome-menu {
+  position: absolute;
+  top: 12px;
+  left: calc(100% + 10px);
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ffffff; /* Cor do texto */
+  display: block; /* Mostra quando o menu está aberto */
+  animation: text-focus-in 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) forwards; /* Aplica a animação */
+}
+
+.menu.aberto .configuracao .nome-menu {
+  opacity: 1; /* Torna visível quando o menu está aberto */
+}
+
 
 /* Estilos para posicionar ícones manualmente */
 .menu .icones li.icone-chart {
@@ -215,7 +234,7 @@
 .content {
   flex: 1;
   transition: margin-left 0.5s ease;
-  margin-left: 50px; /* Largura inicial do menu fechado */
+
 }
 
 .menu-aberto .content {

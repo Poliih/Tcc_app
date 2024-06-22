@@ -1,9 +1,9 @@
 // components/Dashboard.js
 
 import React from 'react';
-import Rectangle from './Rectangle'; // Importando o componente Rectangle
-import './Rectangle/styles.css'; // Importando os estilos do Rectangle
-import ApexChartComponent from './graphic';
+import Rectangle from '../Rectangle'; // Ajuste o caminho para o componente Rectangle
+import '../Rectangle/styles.css'; // Ajuste o caminho para os estilos do Rectangle
+import ApexChartComponent from '../graphic'; // Ajuste o caminho para o componente ApexChartComponent
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt, faBatteryThreeQuarters, faCheckSquare, faAreaChart } from '@fortawesome/free-solid-svg-icons';
 
