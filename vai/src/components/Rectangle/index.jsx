@@ -13,7 +13,7 @@ const Rectangle = ({ titulo, valor, unidade, comparativo }) => {
           {titulo}
         </div>
         <div className="valor">
-          {valor.toLocaleString()} {unidade}
+          {valor !== undefined && valor !== null ? valor.toLocaleString() : '-'} {unidade}
         </div>
         {comparativo !== undefined && (
           <div className="comparativo" style={{ color: comparativoColor }}>
