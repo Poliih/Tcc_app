@@ -1,0 +1,28 @@
+Token por E-mail
+
+Sua nova chave Token: eHcyeUk3S0Q0c0RUVnJrRHRNaVZHZk5oR3h5a0tVams=xw2yI7KD4sDTVrkDtMiVGfNhGxykKUjk
+
+
+Modo de Uso
+As chamadas são resgatadas por método GET, siga os exemplos a seguir para a usabilidade de cada uma
+
+Recuperar todas estações de acordo com o tipo passado como parâmetro:
+Estações Automáticas: https://apitempo.inmet.gov.br/estacoes/T
+Estações Manuais: https://apitempo.inmet.gov.br/estacoes/M
+
+Recuperar dados horários referentes a estação automática ou manual:
+*apitempo.inmet.gov.br/token/estacao/:data_inicial/:data_final/:cod_estacao/:seu_token
+Ex: https://apitempo.inmet.gov.br/token/estacao/2022-11-01/2022-11-01/A001/eHcyeUk3S0Q0c0RUVnJrRHRNaVZHZk5oR3h5a0tVams=xw2yI7KD4sDTVrkDtMiVGfNhGxykKUjk
+
+Recuperar dados horários referentes a todas as estações automáticas de um determinado dia:
+*apitempo.inmet.gov.br/token/estacao/dados/:data/:hora/:seu_token
+Ex: https://apitempo.inmet.gov.br/token/estacao/dados/2022-11-01/0000/eHcyeUk3S0Q0c0RUVnJrRHRNaVZHZk5oR3h5a0tVams=xw2yI7KD4sDTVrkDtMiVGfNhGxykKUjk
+
+Recuperar dados diários referentes a estação automática ou manual:
+*apitempo.inmet.gov.br/token/estacao/diaria/:data_inicial/:data_final/:cod_estacao/:seu_token
+Ex: https://apitempo.inmet.gov.br/token/estacao/diaria/2022-11-01/2022-11-01/A001/eHcyeUk3S0Q0c0RUVnJrRHRNaVZHZk5oR3h5a0tVams=xw2yI7KD4sDTVrkDtMiVGfNhGxykKUjk
+
+Lembrando que sua chave Token é exclusiva e intransferível!
+
+
+Este é um e-mail automático. Não responda.

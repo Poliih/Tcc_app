@@ -1,8 +1,7 @@
-// App.js
-
 import React, { useState } from 'react';
 import MenuComponent from './components/Menu';
-import Dashboard from './components/Dashboard'; // Importando o componente Dashboard
+import Dashboard from './components/Dashboard';
+import Dados from './components/Dados';  // Importe o componente Dados
 import './App.css';
 
 function App() {
@@ -38,9 +37,9 @@ function App() {
       />
       <div className={`content ${menuExpandido ? 'menu-expandido' : ''}`}>
         {paginaSelecionada === 'dashboard' && <Dashboard />}
-        {paginaSelecionada === 'dados' && <div className="pagina-em-branco">Página de Dados</div>}
+        {paginaSelecionada === 'dados' && <Dados />}  {/* Renderiza o componente Dados */}
         {paginaSelecionada === 'rateio' && <div className="pagina-em-branco">Página de Rateio</div>}
-        {paginaSelecionada === 'configuracao' && <div className="pagina-em-branco">Página de Configuracao</div>}
+        {paginaSelecionada === 'configuracao' && <div className="pagina-em-branco">Página de Configuração</div>}
       </div>
     </div>
   );
