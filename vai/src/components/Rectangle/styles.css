@@ -1,6 +1,32 @@
+/* Importe a fonte Plus Jakarta Sans */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
 /* Estilos padrão para quando o menu está fechado */
 .container {
   display: flex;
+}
+
+.Rectangle .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Alinha os itens à esquerda */
+  text-align: left; /* Alinha o texto à esquerda */
+  color: white; /* Cor do texto */
+  font-size: 1.1rem; /* Tamanho da fonte */
+  background: none; /* Remove o fundo */
+  padding: 10px; /* Espaçamento interno */
+  font-family: 'Plus Jakarta Sans', sans-serif; /* Use a fonte Plus Jakarta Sans como padrão */
+  margin-left: 10px; /* Margem à esquerda */
+}
+
+
+.Rectangle .info .titulo {
+  margin-bottom: 10px; /* Margem inferior entre o título e o valor */
+  font-weight: bold; /* Negrito */
+}
+
+.Rectangle .info .valor {
+  font-size: 1.2rem; /* Exemplo de tamanho de fonte */
 }
 
 .content {
@@ -24,8 +50,7 @@
   background: #1E646E;
   border-radius: 20px;
   display: flex;
-  margin-right: 40px;
-  margin-left: -30px;
+
   justify-content: center; /* Centraliza o conteúdo horizontalmente */
   align-items: center; /* Centraliza o conteúdo verticalmente */
   transition: width 0.3s ease; /* Transição suave apenas para largura */
@@ -36,7 +61,46 @@
   width: 300px; /* Largura ajustada dos retângulos quando o menu está aberto */
 }
 
-.menu-aberto .row-content {
-  margin-left: 30px; /* Ajuste de margem esquerda quando o menu está aberto */
-  margin-right: 40px;
+.titulo-icon {
+  margin-right: 10px; /* Ajuste a margem direita conforme necessário */
+  font-size: 1.2rem;
+  vertical-align: middle; /* Alinha o ícone verticalmente no meio */
+  color: white;
+}
+
+.comparativo-icon {
+  margin-right: 5px;
+  font-size: 1.2rem;
+  vertical-align: middle; /* Alinha o ícone verticalmente no meio */
+}
+.Rectangle .info .comparativo {
+  font-size: 0.9rem; /* Ajuste o tamanho da fonte do comparativo conforme necessário */
+  display: flex; /* Adiciona flex display para alinhar ícone e texto */
+  align-items: center; /* Alinha o conteúdo verticalmente no centro */
+  color: #808080; /* Cor cinza para o texto do comparativo */
+}
+
+/* Media queries para Full HD */
+@media (min-width: 1920px) {
+  
+  .titulo-icon {
+    font-size: 1.7rem;
+  }
+  
+  .comparativo-icon {
+    font-size: 1.8rem;
+  }
+
+  
+  .Rectangle .info .valor {
+    font-size: 1.45rem; /* Exemplo de tamanho de fonte */
+  }
+  
+  .Rectangle .info .comparativo {
+    font-size: 1.2rem; /* Ajuste o tamanho da fonte do comparativo conforme necessário */
+  }
+  .Rectangle .info {
+    font-size: 1.45rem; /* Tamanho da fonte */
+  }
+  
 }

@@ -229,11 +229,63 @@
   height: 100vh;
 }
 
-/* Ajustes específicos para o tamanho do menu */
-.menu-fechado .row-content {
-  margin-left: 50px;
-}
 
 .menu-aberto .row-content {
   margin-left: 200px;
+}
+
+@media (min-width: 1920px) {
+
+  body, html {
+    font-size: larger; /* Aumenta o tamanho da fonte para telas maiores */
+  }
+
+  .content {
+    max-width: 70%; /* Reduz a largura máxima para telas maiores */
+  }
+
+  .menu {
+    width: 80px; /* Aumenta a largura do menu para telas maiores */
+  }
+
+  .menu.aberto {
+    width: 230px; /* Aumenta a largura do menu quando aberto para telas maiores */
+  }
+
+  .menu .icones li .nome-menu {
+    font-size: 22px; /* Aumenta o tamanho da fonte para o nome do menu */
+  }
+
+  .menu .botao-recolher .icone-seta {
+    font-size: 28px; /* Aumenta o tamanho da seta para telas maiores */
+  }
+
+  .menu .icones {
+    font-size: 30px; /* Aumenta o tamanho dos ícones */
+  }
+
+  .menu .icones li a {
+    padding: 25px 0; /* Aumenta o espaçamento dos ícones */
+  }
+  .menu .icones li.icone-chart {
+    left: 25px;
+  }
+  
+  .menu .icones li.icone-database {
+    left: 29px;
+  }
+  
+  .menu .icones li.icone-brain {
+    left: 26px;
+  }
+  .menu .botao-recolher {
+    left: 35px; /* Ajuste conforme necessário */
+  }
+
+  .menu .configuracao {
+    left: 25px;
+  }
+  .menu .configuracao .icone-cog {
+    font-size: 29px;
+  }
 }
