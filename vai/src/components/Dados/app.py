@@ -1,9 +1,9 @@
 from flask import Flask, jsonify, request
-from flask_cors import CORS  # Importe a extensão CORS
+from flask_cors import CORS  # Adicione esta linha
 import requests
 
 app = Flask(__name__)
-CORS(app)  # Permitir CORS para todas as rotas
+CORS(app)  # Adicione esta linha
 
 @app.route('/api/weather', methods=['GET'])
 def get_weather_data():

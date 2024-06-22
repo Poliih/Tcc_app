@@ -1,21 +1,22 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
+import './styles.css';
 
 const WeatherApexChart = ({ data }) => {
-  const options = {
+  const chartOptions = {
     series: [
       {
         name: "Precipitação",
-        data: data.map((d) => d.precipitation || 0),
+        data: data.map(d => d.precipitation)
       },
       {
         name: "Umidade",
-        data: data.map((d) => d.humidity || 0),
+        data: data.map(d => d.humidity)
       },
       {
         name: 'Temperatura',
-        data: data.map((d) => d.temperature || 0),
-      },
+        data: data.map(d => d.temperature)
+      }
     ],
     chart: {
       height: 350,
@@ -33,7 +34,7 @@ const WeatherApexChart = ({ data }) => {
       dashArray: [0, 8, 5]
     },
     title: {
-      text: 'Condições Diárias 22/06/2024 - GOIANESIA-GO',
+      text: 'Condições Diárias 22/06/2023 - GOIANESIA-GO',
       align: 'left'
     },
     legend: {
@@ -48,7 +49,7 @@ const WeatherApexChart = ({ data }) => {
       }
     },
     xaxis: {
-      categories: data.map((d) => d.hour),
+      categories: data.map(d => d.hour),
     },
     tooltip: {
       y: [
@@ -80,7 +81,11 @@ const WeatherApexChart = ({ data }) => {
     }
   };
 
-  return <ReactApexChart options={options} series={options.series} type="line" height={350} />;
+   return (
+    <div className="chart-2">
+      <ReactApexChart options={chartOptions} series={chartOptions.series} type="line" height={350} />
+    </div>
+  );
 };
 
 export default WeatherApexChart;

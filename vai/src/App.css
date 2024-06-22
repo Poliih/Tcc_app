@@ -16,7 +16,6 @@ body, html {
   justify-content: center;
   align-items: top;
   min-height: 100vh;
-  transition: margin-left 0.5s ease;
   margin-left: 0;
 }
 /* styles.css */
@@ -31,7 +30,7 @@ body, html {
   width: 100%;
   max-width: 85%; /* Ajuste a largura máxima conforme necessário */
   padding: 20px;
-  box-sizing: border-box;
+  
 }
 
 /* Estiliza a linha de retângulos */
@@ -98,3 +97,4 @@ body, html {
     margin-top: -300px; /* Ajusta a margem superior para melhor alinhamento */
   }
 }
+

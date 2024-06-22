@@ -1,21 +1,36 @@
-.App {
-    text-align: center;
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .weather-details {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-  }
-  
+/* components/Dados/styles.css */
+
+.dados-container {
+  width: 100%;
+  max-width: 95%;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 0px;
+  transition: margin-left 0.5s ease;
+}
+
+.dados {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.chart-2 {
+  max-width: 90%;
+  width: 100%;
+  margin: 20px auto; /* Adiciona espaço ao redor do contêiner */
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px; /* Espaçamento interno */
+  margin-top: -300px;
+}
+
+.apexcharts {
+  max-height: 500px;
+}
