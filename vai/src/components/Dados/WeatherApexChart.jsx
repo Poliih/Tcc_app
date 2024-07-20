@@ -1,89 +1,42 @@
 import React from 'react';
-import ReactApexChart from 'react-apexcharts';
-import './styles.css';
+import ApexCharts from 'react-apexcharts';
 
 const WeatherApexChart = ({ data }) => {
-  const chartOptions = {
+  // Estrutura dos dados para o gráfico
+  const chartData = {
     series: [
       {
-        name: "Precipitação",
-        data: data.map(d => d.precipitation)
-      },
-      {
-        name: "Umidade",
-        data: data.map(d => d.humidity)
-      },
-      {
         name: 'Temperatura',
-        data: data.map(d => d.temperature)
+        data: data.map(item => item.temperature)  // Extrai os dados de temperatura do array de dados horários
       }
     ],
-    chart: {
-      height: 350,
-      type: 'line',
-      zoom: {
+    options: {
+      chart: {
+        height: 350,
+        type: 'line',
+        zoom: {
+          enabled: false
+        }
+      },
+      dataLabels: {
         enabled: false
       },
-    },
-    dataLabels: {
-      enabled: false
-    },
-    stroke: {
-      width: [5, 7, 5],
-      curve: 'straight',
-      dashArray: [0, 8, 5]
-    },
-    title: {
-      text: 'Condições Diárias 22/06/2023 - GOIANESIA-GO',
-      align: 'left'
-    },
-    legend: {
-      tooltipHoverFormatter: function(val, opts) {
-        return val + ' - <strong>' + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] + '</strong>'
+      stroke: {
+        curve: 'straight'
+      },
+      title: {
+        text: 'Previsão Horária de Temperatura',
+        align: 'left'
+      },
+      xaxis: {
+        categories: data.map(item => item.hour)  // Extrai as horas para o eixo X do gráfico
       }
-    },
-    markers: {
-      size: 0,
-      hover: {
-        sizeOffset: 6
-      }
-    },
-    xaxis: {
-      categories: data.map(d => d.hour),
-    },
-    tooltip: {
-      y: [
-        {
-          title: {
-            formatter: function (val) {
-              return val + " mm"
-            }
-          }
-        },
-        {
-          title: {
-            formatter: function (val) {
-              return val + "%"
-            }
-          }
-        },
-        {
-          title: {
-            formatter: function (val) {
-              return val + "°C";
-            }
-          }
-        }
-      ]
-    },
-    grid: {
-      borderColor: '#f1f1f1',
     }
   };
 
-   return (
-    <div className="chart-2">
-      <ReactApexChart options={chartOptions} series={chartOptions.series} type="line" height={350} />
+  return (
+    <div className="weather-chart">
+      <ApexCharts options={chartData.options} series={chartData.series} type="line" height={350} />
     </div>
   );
 };

@@ -6,6 +6,8 @@ import '../Rectangle/styles.css'; // Ajuste o caminho para os estilos do Rectang
 import ApexChartComponent from '../graphic'; // Ajuste o caminho para o componente ApexChartComponent
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBolt, faBatteryThreeQuarters, faCheckSquare, faAreaChart } from '@fortawesome/free-solid-svg-icons';
+import GraficoBD from '../GraficoBD';
+import './styles.css';
 
 const Dashboard = ({ menuAberto }) => {
   // Valores fictícios para consumo, geração, injetado e porcentagem de compensação
@@ -65,7 +67,7 @@ const Dashboard = ({ menuAberto }) => {
         />
       </div>
       <div className="chart-container">
-        <ApexChartComponent />
+        <GraficoBD />
       </div>
     </div>
   );

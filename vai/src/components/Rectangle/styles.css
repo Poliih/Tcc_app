@@ -33,15 +33,16 @@
   margin-top: 50px;
   flex: 1;
   display: flex;
-  justify-content: center; /* Centraliza os retângulos horizontalmente */
   padding: 0 60px; /* Adiciona espaço interno nas laterais */
 }
 
+/* retangulos */
 .row-content {
   display: flex;
   justify-content: space-between; /* Distribui os retângulos igualmente com espaço entre eles */
   align-items: center; /* Alinha os retângulos verticalmente */
   width: 100%; /* Ocupa toda a largura disponível */
+  margin-block-end: 90px;
 }
 
 .Rectangle {

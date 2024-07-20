@@ -241,13 +241,6 @@
   margin-left: 200px; /* Largura do menu aberto */
 }
 
-.row-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 
 .menu-aberto .row-content {
   margin-left: 200px;
