@@ -10,8 +10,8 @@ def get_weather_data():
     try:
         token = "eHcyeUk3S0Q0c0RUVnJrRHRNaVZHZk5oR3h5a0tVams=xw2yI7KD4sDTVrkDtMiVGfNhGxykKUjk"
         cod_estacao = "A022"
-        data_inicial = "2023-06-22"
-        data_final = "2023-06-22"
+        data_inicial = "2023-07-11"
+        data_final = "2023-07-11"
         
         url = f"https://apitempo.inmet.gov.br/token/estacao/diaria/{data_inicial}/{data_final}/{cod_estacao}/{token}"
         

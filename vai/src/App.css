@@ -63,6 +63,17 @@ body, html {
   margin-left: 0; /* Ajuste de margem esquerda quando o menu está aberto */
 }
 
+/* Estiliza o contêiner do gráfico */
+.chart-container {
+  width: 95%; /* Define a largura como 100% do elemento pai */
+  margin-top: -230px; /* Espaçamento superior */
+  background-color: #ffffff; /* Cor de fundo */
+  padding: 20px; /* Espaçamento interno */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  border-radius: 10px; /* Bordas arredondadas */
+}
+
+
 /* Media queries para Full HD */
 @media (min-width: 1920px) {
 

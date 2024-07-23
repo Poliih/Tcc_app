@@ -6,7 +6,7 @@ import './App.css';
 
 function App() {
   const [menuAberto, setMenuAberto] = useState(false);
-  const [paginaSelecionada, setPaginaSelecionada] = useState(null);
+  const [paginaSelecionada, setPaginaSelecionada] = useState('dashboard'); // Define uma página inicial
   const [menuExpandido, setMenuExpandido] = useState(false);
 
   const toggleMenu = () => {
@@ -14,16 +14,8 @@ function App() {
     setMenuExpandido(!menuExpandido); // Alternar entre expandido/recolhido
   };
 
-  const handleMostrarDashboard = () => {
-    if (!menuExpandido) {
-      toggleMenu(); // Fecha o menu ao mostrar o dashboard se não estiver expandido
-    }
-    setPaginaSelecionada('dashboard');
-  };
-
   const handleSelecionarPagina = (pagina) => {
     setPaginaSelecionada(pagina);
-    setMenuExpandido(false); // Recolhe o menu ao selecionar outra página
   };
 
   return (
@@ -31,13 +23,12 @@ function App() {
       <MenuComponent
         menuAberto={menuAberto}
         toggleMenu={toggleMenu}
-        mostrarDashboard={handleMostrarDashboard}
         selecionarPagina={handleSelecionarPagina}
         menuExpandido={menuExpandido}
       />
       <div className={`content ${menuExpandido ? 'menu-expandido' : ''}`}>
-        {paginaSelecionada === 'dashboard' && <Dashboard />}
-        {paginaSelecionada === 'dados' && <Dados />}
+        {paginaSelecionada === 'dashboard' && <Dashboard menuAberto={menuAberto} />}
+        {paginaSelecionada === 'dados' && <Dados menuAberto={menuAberto} />}
         {paginaSelecionada === 'rateio' && <div className="pagina-em-branco">Página de Rateio</div>}
         {paginaSelecionada === 'configuracao' && <div className="pagina-em-branco">Página de Configuração</div>}
       </div>
