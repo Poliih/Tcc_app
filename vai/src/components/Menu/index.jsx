@@ -3,15 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faCog, faChartPie, faDatabase, faBrain } from '@fortawesome/free-solid-svg-icons';
 import './styles.css';
 
-const MenuComponent = ({ menuAberto, toggleMenu, mostrarDashboard, selecionarPagina, menuExpandido }) => {
+const MenuComponent = ({ menuAberto, toggleMenu, selecionarPagina, menuExpandido }) => {
 
   const handleToggleMenu = () => {
-    if (menuExpandido) {
-      toggleMenu(); // Fecha o menu ao clicar na seta se estiver expandido
-    } else {
-      mostrarDashboard(); // Mostra o conteúdo do Dashboard ao abrir o menu
-      toggleMenu(); // Abre o menu ao clicar na seta
-    }
+    toggleMenu();
   };
 
   return (
@@ -42,7 +37,7 @@ const MenuComponent = ({ menuAberto, toggleMenu, mostrarDashboard, selecionarPag
         </ul>
       </div>
       <div className={`configuracao ${menuAberto ? 'aberto' : ''}`}>
-        <a href="#Configuracao"onClick={() => { selecionarPagina('configuracao'); }}>
+        <a href="#Configuracao" onClick={() => { selecionarPagina('configuracao'); }}>
           <FontAwesomeIcon icon={faCog} className="icone icone-cog" />
           {menuAberto && <span className="nome-menu">Configuração</span>}
         </a>
