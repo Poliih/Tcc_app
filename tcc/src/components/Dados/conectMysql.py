@@ -11,7 +11,7 @@ CORS(app)  # Aplica o CORS à sua aplicação Flask
 db_config = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'Relaxa111@',
+    'password': 'xxx',
     'database': 'weather_data',
     'cursorclass': pymysql.cursors.DictCursor
 }

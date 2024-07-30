@@ -2,11 +2,11 @@ from flask import Flask, jsonify
 import requests
 import pymysql
 import pymysql.cursors
-from cryptography.fernet import Fernet  # Certifique-se de que o pacote cryptography está instalado
+from cryptography.fernet import Fernet 
 
 app = Flask(__name__)
 
-# Token fornecido pelo INMET (substitua pelo seu token real)
+# Token fornecido pelo INMET
 token = "XXX"
 
 # Configurações do banco de dados MySQL
@@ -21,7 +21,7 @@ db_config = {
 @app.route('/api/weather', methods=['GET'])
 def fetch_weather_data():
     try:
-        # Data inicial e final desejada para os dados da estação automática de Goianésia
+        # Data inicial e final
         data_inicial = "2022-11-01"
         data_final = "2022-11-01"
         
