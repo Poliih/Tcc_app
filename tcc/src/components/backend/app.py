@@ -7,7 +7,7 @@ from cryptography.fernet import Fernet  # Certifique-se de que o pacote cryptogr
 app = Flask(__name__)
 
 # Token fornecido pelo INMET (substitua pelo seu token real)
-token = "eHcyeUk3S0Q0c0RUVnJrRHRNaVZHZk5oR3h5a0tVams=xw2yI7KD4sDTVrkDtMiVGfNhGxykKUjk"
+token = "XXX"
 
 # Configurações do banco de dados MySQL
 db_config = {

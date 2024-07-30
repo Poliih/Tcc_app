@@ -1,56 +1,72 @@
-// components/Graphic/index.jsx
-import React, { useRef, useEffect } from 'react';
-import { Bar } from 'react-chartjs-2';
-import Chart from 'chart.js/auto';
-import { generateRandomMonths, generateRandomKwh } from '../GeradorDados/GBD';
+import React from 'react';
+import ReactApexChart from 'react-apexcharts';
 
-const Graphic = () => {
-  const chartRef = useRef(null);
-  const dates = generateRandomMonths();
-  const kwh = generateRandomKwh();
+const ApexChartComponent = () => {
+  // Dados de consumo fictícios (em kWh)
+  const consumo = [210000, 200000, 186000, 204000, 182000, 190000, 208000, 206000, 224000];
 
-  useEffect(() => {
-    let chartInstance = null;
+  // Calcula os dados de injetado como 90% do consumo
+  const injetado = consumo.map(value => Math.round(value * 0.9));
 
-    const createOrUpdateChart = () => {
-      if (chartInstance) {
-        chartInstance.destroy();
+  const options = {
+    series: [
+      {
+        name: 'Geração',
+        data: [220000, 200000, 210000, 180000, 190000, 208000, 230000, 220000, 210000]
+      },
+      {
+        name: 'Consumo',
+        data: consumo
+      },
+      {
+        name: 'Injetado',
+        data: injetado
       }
-
-      const ctx = chartRef.current.getContext('2d');
-      chartInstance = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: dates,
-          datasets: [
-            {
-              label: 'kWh x Mês',
-              backgroundColor: 'rgba(75,192,192,0.2)',
-              borderColor: 'rgba(75,192,192,1)',
-              borderWidth: 1,
-              hoverBackgroundColor: 'rgba(75,192,192,0.4)',
-              hoverBorderColor: 'rgba(75,192,192,1)',
-              data: kwh,
-            },
-          ],
-        },
-      });
-    };
-
-    createOrUpdateChart();
-
-    return () => {
-      if (chartInstance) {
-        chartInstance.destroy();
+    ],
+    chart: {
+      type: 'bar',
+      height: 350
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '55%',
+        endingShape: 'rounded'
       }
-    };
-  }, );
+    },
+    dataLabels: {
+      enabled: false
+    },
+    stroke: {
+      show: true,
+      width: 2,
+      colors: ['transparent']
+    },
+    xaxis: {
+      categories: ['Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out']
+    },
+    yaxis: {
+      title: {
+        text: 'Energia (kWh)'
+      }
+    },
+    fill: {
+      opacity: 1
+    },
+    tooltip: {
+      y: {
+        formatter: function (val) {
+          return val.toLocaleString() + " kWh";
+        }
+      }
+    }
+  };
 
   return (
-    <div className="chart-container">
-      <canvas ref={chartRef} />
+    <div id="apex-chart">
+      <ReactApexChart options={options} series={options.series} type="bar" height={350} />
     </div>
   );
 };
 
-export default Graphic;
+export default ApexChartComponent;

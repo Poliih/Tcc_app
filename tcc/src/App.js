@@ -1,38 +1,36 @@
 import React, { useState } from 'react';
+import MenuComponent from './components/Menu';
+import Dashboard from './components/Dashboard';
+import Dados from './components/Dados';
 import './App.css';
-import './components/Button/Button1.css';
-import './components/Rectangle2/Rectangle2.css';
-import './components/menu/MenuComponent.css';
-import MenuComponent from './components/menu/menu';
-
-import Rectangle2 from './components/Rectangle2/Rectangle2';
-import { Row } from './styles';
-import Graphic from './components/Graphic';
-import './components/Graphic/index.css';
-import OrderList from "./components/OrderList";
-import "./components/OrderList/index.css"; // Importa os estilos do componente
-// Remova esta importação redundante
-// import '../GeradorDados/GBD';
 
 function App() {
-  const [menuAberto, setMenuAberto] = useState(true);
+  const [menuAberto, setMenuAberto] = useState(false);
+  const [paginaSelecionada, setPaginaSelecionada] = useState('dashboard'); // Define uma página inicial
+  const [menuExpandido, setMenuExpandido] = useState(false);
 
   const toggleMenu = () => {
     setMenuAberto(!menuAberto);
+    setMenuExpandido(!menuExpandido); // Alternar entre expandido/recolhido
+  };
+
+  const handleSelecionarPagina = (pagina) => {
+    setPaginaSelecionada(pagina);
   };
 
   return (
     <div className={`container ${menuAberto ? 'menu-aberto' : 'menu-fechado'}`}>
-      <MenuComponent menuAberto={menuAberto} toggleMenu={toggleMenu} />
-      <div className="content">
-        <Row>
-          <Rectangle2 className="rectangle-spacing" />
-          <Rectangle2 className="rectangle-spacing" />
-          <Rectangle2 className="rectangle-spacing" />
-        </Row>
-        <Graphic />
-        {/* Certifique-se de que não há uso de useContext dentro do componente OrderList */}
-        <OrderList />
+      <MenuComponent
+        menuAberto={menuAberto}
+        toggleMenu={toggleMenu}
+        selecionarPagina={handleSelecionarPagina}
+        menuExpandido={menuExpandido}
+      />
+      <div className={`content ${menuExpandido ? 'menu-expandido' : ''}`}>
+        {paginaSelecionada === 'dashboard' && <Dashboard menuAberto={menuAberto} />}
+        {paginaSelecionada === 'dados' && <Dados menuAberto={menuAberto} />}
+        {paginaSelecionada === 'rateio' && <div className="pagina-em-branco">Página de Rateio</div>}
+        {paginaSelecionada === 'configuracao' && <div className="pagina-em-branco">Página de Configuração</div>}
       </div>
     </div>
   );

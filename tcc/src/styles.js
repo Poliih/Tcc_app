@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 
-
 // Estiliza o componente Row
 export const Row = styled.div`
     display: flex;
@@ -22,10 +21,10 @@ export const Row = styled.div`
 `;
 
 
-
 export const Column = styled.div`
     display: flex;
     flex-direction: Column;
     justify-content: space-between;
     align-items: center;
+    
 `;
