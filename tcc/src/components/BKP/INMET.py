@@ -3,7 +3,7 @@ import requests
 def get_weather_data():
     try:
         # Defina as variáveis necessárias
-        token = "eHcyeUk3S0Q0c0RUVnJrRHRNaVZHZk5oR3h5a0tVams=xw2yI7KD4sDTVrkDtMiVGfNhGxykKUjk"
+        token = "xxx"
         cod_estacao = "A022"
         data_inicial = "2023-06-22"
         data_final = "2023-06-22"
